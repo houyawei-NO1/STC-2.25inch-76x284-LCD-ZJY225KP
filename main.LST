@@ -1,4 +1,4 @@
-C251 COMPILER V5.60.0,  main                                                               29/11/24  13:32:44  PAGE 1   
+C251 COMPILER V5.60.0,  main                                                               29/11/24  15:02:27  PAGE 1   
 
 
 C251 COMPILER V5.60.0, COMPILATION OF MODULE main
@@ -66,7 +66,7 @@ stmt  level    source
    57          
    58          /*************  本地变量声明    **************/
    59          
-C251 COMPILER V5.60.0,  main                                                               29/11/24  13:32:44  PAGE 2   
+C251 COMPILER V5.60.0,  main                                                               29/11/24  15:02:27  PAGE 2   
 
    60          
    61          /*************  本地函数声明    **************/
@@ -107,16 +107,17 @@ stmt  level    source
    96   2              LCD_Fill(LCD_W / 2, LCD_H / 2, LCD_W, LCD_H, WHITE);
    97   2              delay_ms(1000);
    98   2                      LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
-   99   2                      //LCD_ShowChinese12x12(13, 60, "欢迎使用东风红农业装备", RED, WHITE, 12, 0);
-  100   2      //              LCD_ShowChinese(13, 60, typFONT_GB16 , RED, WHITE, 12, 0);
-  101   2      //              delay_ms(1000);
-  102   2          }
-  103   1      }
+   99   2                      LCD_ShowPicture(5, 5, 76, 62, tuolaji);
+  100   2                      LCD_ShowChinese(100,35,"欢迎使用东方红农业装备",RED,WHITE,16,0);
+  101   2                      
+  102   2                      delay_ms(5000);
+  103   2          }
+  104   1      }
 
 
 Module Information          Static   Overlayable
 ------------------------------------------------
-  code size            =     12240     ------
+  code size            =     12318     ------
   ecode size           =    ------     ------
   data size            =    ------     ------
   idata size           =    ------     ------
@@ -131,7 +132,7 @@ Module Information          Static   Overlayable
   far data size        =    ------     ------
   huge data size       =    ------     ------
   const size           =    ------     ------
-  hconst size          =        44     ------
+  hconst size          =      9491     ------
 End of Module Information.
 
 

@@ -1,4 +1,4 @@
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 1   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 1   
 
 
 C251 COMPILER V5.60.0, COMPILATION OF MODULE lcd
@@ -66,7 +66,7 @@ stmt  level    source
    56   2          }
    57   1          else
    58   1          {
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 2   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 2   
 
    59   2              incy = -1;
    60   2              delta_y = -delta_y;
@@ -134,7 +134,7 @@ stmt  level    source
   122           * @param       yc:圆心行坐标
   123           * @param       x:相对于圆心的列坐标
   124           * @param       y:相对于圆心的行坐标
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 3   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 3   
 
   125           * @param       color:圆形的颜色值
   126           * @retval      无
@@ -202,7 +202,7 @@ stmt  level    source
   188   4                  }
   189   3                  x++;
   190   3              }
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 4   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 4   
 
   191   2          }
   192   1      }
@@ -270,7 +270,7 @@ stmt  level    source
   252   4                      m++;
   253   4                      if (m % sizex == 0)
   254   4                      {
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 5   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 5   
 
   255   5                          m = 0;
   256   5                          break;
@@ -338,7 +338,7 @@ stmt  level    source
   316           * @param       x:数字显示位置列起始坐标
   317           * @param       y:数字显示位置行起始坐标
   318           * @param       num:显示的数字(0~4294967295)
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 6   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 6   
 
   319           * @param       len:显示数字的位数
   320           * @param       fc:字符颜色
@@ -406,7 +406,7 @@ stmt  level    source
 *** WARNING C188 IN LINE 376 OF HARDWARE\LCD\lcd.c: 'parameter 3': value truncated
   377   2          }
   378   1      }
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 7   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 7   
 
   379          
   380          /**
@@ -474,7 +474,7 @@ stmt  level    source
   441   3              }
   442   2              continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
   443   2          }
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 8   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 8   
 
   444   1      }
   445          
@@ -542,7 +542,7 @@ stmt  level    source
   506   4                  }
   507   3              }
   508   2              continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 9   
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 9   
 
   509   2          }
   510   1      }
@@ -610,7 +610,7 @@ stmt  level    source
   571   5                      }
   572   4                  }
   573   3              }
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 10  
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 10  
 
   574   2              continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
   575   2          }
@@ -678,7 +678,7 @@ stmt  level    source
   636   6                          }
   637   5                      }
   638   4                  }
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 11  
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 11  
 
   639   3              }
   640   2              continue; // 查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
@@ -746,7 +746,7 @@ stmt  level    source
   699   4                      bHz = 1; // 中文
   700   4                  }
   701   3                  else // 字符
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 12  
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 12  
 
   702   3                  {
   703   4                      if (*s == 0x0D) // 换行符号
@@ -814,7 +814,7 @@ stmt  level    source
   763           * @retval      无
   764           */
   765          void LCD_ShowPicture(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint8_t pic[])
-C251 COMPILER V5.60.0,  lcd                                                                29/11/24  13:32:44  PAGE 13  
+C251 COMPILER V5.60.0,  lcd                                                                29/11/24  15:02:27  PAGE 13  
 
   766          {
   767   1          uint8_t picH, picL;
@@ -836,7 +836,7 @@ stmt  level    source
 
 Module Information          Static   Overlayable
 ------------------------------------------------
-  code size            =     20518     ------
+  code size            =     20903     ------
   ecode size           =    ------     ------
   data size            =    ------     ------
   idata size           =    ------     ------

@@ -96,8 +96,9 @@ void main(void)
         LCD_Fill(LCD_W / 2, LCD_H / 2, LCD_W, LCD_H, WHITE);
         delay_ms(1000);
 		LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
-		//LCD_ShowChinese12x12(13, 60, "欢迎使用东风红农业装备", RED, WHITE, 12, 0);
-//		LCD_ShowChinese(13, 60, typFONT_GB16 , RED, WHITE, 12, 0);
-//		delay_ms(1000);
+		LCD_ShowPicture(5, 5, 76, 62, tuolaji);
+		LCD_ShowChinese(100,35,"欢迎使用东方红农业装备",RED,WHITE,16,0);
+		
+		delay_ms(5000);
     }
 }
