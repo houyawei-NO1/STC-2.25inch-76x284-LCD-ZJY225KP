@@ -1,4 +1,4 @@
-C251 COMPILER V5.60.0,  main                                                               29/11/24  10:57:15  PAGE 1   
+C251 COMPILER V5.60.0,  main                                                               29/11/24  13:32:44  PAGE 1   
 
 
 C251 COMPILER V5.60.0, COMPILATION OF MODULE main
@@ -66,7 +66,7 @@ stmt  level    source
    57          
    58          /*************  本地变量声明    **************/
    59          
-C251 COMPILER V5.60.0,  main                                                               29/11/24  10:57:15  PAGE 2   
+C251 COMPILER V5.60.0,  main                                                               29/11/24  13:32:44  PAGE 2   
 
    60          
    61          /*************  本地函数声明    **************/
@@ -108,15 +108,15 @@ stmt  level    source
    97   2              delay_ms(1000);
    98   2                      LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
    99   2                      //LCD_ShowChinese12x12(13, 60, "欢迎使用东风红农业装备", RED, WHITE, 12, 0);
-  100   2                      LCD_ShowChinese(13, 60, "2.25 TFT RESOLUTION:284x76 DRIVER IC:ST7789", RED, WHITE, 12, 0);
-  101   2                      delay_ms(1000);
+  100   2      //              LCD_ShowChinese(13, 60, typFONT_GB16 , RED, WHITE, 12, 0);
+  101   2      //              delay_ms(1000);
   102   2          }
   103   1      }
 
 
 Module Information          Static   Overlayable
 ------------------------------------------------
-  code size            =     12289     ------
+  code size            =     12240     ------
   ecode size           =    ------     ------
   data size            =    ------     ------
   idata size           =    ------     ------

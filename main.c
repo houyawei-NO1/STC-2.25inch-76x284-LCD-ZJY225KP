@@ -97,7 +97,7 @@ void main(void)
         delay_ms(1000);
 		LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
 		//LCD_ShowChinese12x12(13, 60, "欢迎使用东风红农业装备", RED, WHITE, 12, 0);
-		LCD_ShowChinese(13, 60, "2.25 TFT RESOLUTION:284x76 DRIVER IC:ST7789", RED, WHITE, 12, 0);
-		delay_ms(1000);
+//		LCD_ShowChinese(13, 60, typFONT_GB16 , RED, WHITE, 12, 0);
+//		delay_ms(1000);
     }
 }
