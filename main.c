@@ -22,18 +22,30 @@ edata建议保留1K给堆栈使用，空间不够时可将大数组、不常用变量加xdata关键字定义到xd
 
 下载时, 选择时钟 12MHz (用户可自行修改频率).
 
+//  功能描述   : LCD SPI演示例程
+//               GND  电源地
+//               VCC  3.3V电源
+//               SCLK P1^0
+//               MOSI P1^1
+//               RES  P1^2
+//               DC   P1^3
+//               CS   P1^4
+
 ******************************************/
 
-#include "comm\STC32G.h"
+//#include "comm\STC32G.h"
 
 #include "stdio.h"
 #include "intrins.h"
+
+#include "lcd.h"
+#include "pic.h"
 
 typedef 	unsigned char	u8;
 typedef 	unsigned int	u16;
 typedef 	unsigned long	u32;
 
-#define MAIN_Fosc        12000000UL
+
 
 /****************************** 用户定义宏 ***********************************/
 
@@ -56,23 +68,36 @@ void main(void)
     EAXFR = 1; //扩展寄存器(XFR)访问使能
     CKCON = 0; //提高访问XRAM速度
 
-    P0M0 = 0x00;                                //设置P0.0~P0.7为双向口模式
-    P0M1 = 0x00;
 
-    P1M0 = 0xff;                                //设置P1.0~P1.7为推挽输出模式
-    P1M1 = 0x00;
-//    P1M0 = 0xf0;                                //设置P1.4~P1.7为推挽输出模式，设置P1.0~P0.3为双向口模式
-//    P1M1 = 0x00;
+	P2M0 = 0x00; P2M1 = 0x00; 
 
-    P2M0 = 0x00;                                //设置P2.0~P2.7为高阻输入模式
-    P2M1 = 0xff;
-//    P2M0 = 0x00;                                //设置P2.0~P2.3为高阻输入模式，设置P2.4~P2.7为双向口模式
-//    P2M1 = 0x0f;
+	EA = 1;     //打开总中断
+	LCD_Init();
 
-    P3M0 = 0xff;                                //设置P3.0~P3.7为开漏模式
-    P3M1 = 0xff;
-//    P3M0 = 0x0f;                                //设置P3.0~P3.3为开漏模式，设置P3.4~P3.7为高阻输入模式
-//    P3M1 = 0xff;
-
-    while (1);
+   while(1)
+    {
+        LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
+        LCD_ShowPicture(86, 0, 105, 56, gImage_1);
+        LCD_ShowString(13, 60, "2.25 TFT RESOLUTION:284x76 DRIVER IC:ST7789", RED, WHITE, 12, 0);
+        delay_ms(1000);
+        LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
+        LCD_Fill(0, 0, 37, LCD_H, RED);
+        LCD_Fill(37, 0, 72, LCD_H, GREEN);
+        LCD_Fill(72, 0, 107, LCD_H, BLUE);
+        LCD_Fill(107, 0, 142, LCD_H, YELLOW);
+        LCD_Fill(142, 0, 177, LCD_H, WHITE);
+        LCD_Fill(177, 0, 209, LCD_H, GRAY);
+        LCD_Fill(209, 0, 244, LCD_H, BLACK);
+        LCD_Fill(244, 0, 284, LCD_H, MAGENTA);
+        delay_ms(1000);
+        LCD_Fill(0, 0, LCD_W / 2, LCD_H / 2, RED);
+        LCD_Fill(LCD_W / 2, 0, LCD_W, LCD_H / 2, GREEN);
+        LCD_Fill(0, LCD_H / 2, LCD_W / 2, LCD_H, BLUE);
+        LCD_Fill(LCD_W / 2, LCD_H / 2, LCD_W, LCD_H, WHITE);
+        delay_ms(1000);
+		LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
+		//LCD_ShowChinese12x12(13, 60, "欢迎使用东风红农业装备", RED, WHITE, 12, 0);
+		LCD_ShowChinese(13, 60, "2.25 TFT RESOLUTION:284x76 DRIVER IC:ST7789", RED, WHITE, 12, 0);
+		delay_ms(1000);
+    }
 }

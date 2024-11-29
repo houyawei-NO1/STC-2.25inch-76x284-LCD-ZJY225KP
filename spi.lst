@@ -1,0 +1,109 @@
+C251 COMPILER V5.60.0,  spi                                                                29/11/24  10:57:16  PAGE 1   
+
+
+C251 COMPILER V5.60.0, COMPILATION OF MODULE spi
+OBJECT MODULE PLACED IN spi.obj
+COMPILER INVOKED BY: D:\Keil_v5\C251\BIN\C251.EXE HARDWARE\LCD\spi.c XSMALL INTR2 BROWSE INCDIR(.\HARDWARE\LCD) DEBUG PR
+                    -INT(.\spi.lst) OBJECT(spi.obj) 
+
+stmt  level    source
+
+    1          #include "spi.h"
+    2          
+    3          void LCD_GPIOInit(void)
+    4          {
+    5   1          /*
+    6   1           部分MCU型号需要初始化端口配置
+    7   1           与LCD有关的管脚全部配置为推挽输出
+    8   1          */
+    9   1      }
+   10          
+   11          /**
+   12           * @brief       IO模拟SPI发送一个字节数据
+   13           * @param       dat: 需要发送的字节数据
+   14           * @retval      无
+   15           */
+   16          void LCD_WR_Bus(uint8_t dat)
+   17          {
+   18   1          uint8_t i;
+   19   1          LCD_CS_Clr();
+   20   1          for (i = 0; i < 8; i++)
+   21   1          {
+   22   2              LCD_SCK_Clr();
+   23   2              if (dat & 0x80)
+   24   2              {
+   25   3                  LCD_MOSI_Set();
+   26   3              }
+   27   2              else
+   28   2              {
+   29   3                  LCD_MOSI_Clr();
+   30   3              }
+   31   2              LCD_SCK_Set();
+   32   2              dat <<= 1;
+   33   2          }
+   34   1          LCD_CS_Set();
+   35   1      }
+   36          
+   37          /**
+   38           * @brief       向液晶写寄存器命令
+   39           * @param       reg: 要写的命令
+   40           * @retval      无
+   41           */
+   42          void LCD_WR_REG(uint8_t reg)
+   43          {
+   44   1          LCD_DC_Clr();
+   45   1          LCD_WR_Bus(reg);
+   46   1          LCD_DC_Set();
+   47   1      }
+   48          
+   49          /**
+   50           * @brief       向液晶写一个字节数据
+   51           * @param       dat: 要写的数据
+   52           * @retval      无
+   53           */
+   54          void LCD_WR_DATA8(uint8_t dat)
+   55          {
+   56   1          LCD_DC_Set();
+   57   1          LCD_WR_Bus(dat);
+   58   1          LCD_DC_Set();
+C251 COMPILER V5.60.0,  spi                                                                29/11/24  10:57:16  PAGE 2   
+
+   59   1      }
+   60          
+   61          /**
+   62           * @brief       向液晶写一个半字数据
+   63           * @param       dat: 要写的数据
+   64           * @retval      无
+   65           */
+   66          void LCD_WR_DATA(uint16_t dat)
+   67          {
+   68   1          LCD_DC_Set();
+   69   1          LCD_WR_Bus(dat >> 8);
+*** WARNING C188 IN LINE 69 OF HARDWARE\LCD\spi.c: 'parameter 1': value truncated
+   70   1          LCD_WR_Bus(dat & 0xFF);
+   71   1          LCD_DC_Set();
+   72   1      }
+
+
+Module Information          Static   Overlayable
+------------------------------------------------
+  code size            =        69     ------
+  ecode size           =    ------     ------
+  data size            =    ------     ------
+  idata size           =    ------     ------
+  pdata size           =    ------     ------
+  xdata size           =    ------     ------
+  xdata-const size     =    ------     ------
+  edata size           =    ------     ------
+  bit size             =    ------     ------
+  ebit size            =    ------     ------
+  bitaddressable size  =    ------     ------
+  ebitaddressable size =    ------     ------
+  far data size        =    ------     ------
+  huge data size       =    ------     ------
+  const size           =    ------     ------
+  hconst size          =    ------     ------
+End of Module Information.
+
+
+C251 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

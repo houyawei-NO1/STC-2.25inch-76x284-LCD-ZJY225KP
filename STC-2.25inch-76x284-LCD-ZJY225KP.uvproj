@@ -272,7 +272,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\HARDWARE\LCD</IncludePath>
             </VariousControls>
           </C251>
           <Ax51>
@@ -328,6 +328,26 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>HARDWARE</GroupName>
+          <Files>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\LCD\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\LCD\lcd_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\LCD\spi.c</FilePath>
             </File>
           </Files>
         </Group>
